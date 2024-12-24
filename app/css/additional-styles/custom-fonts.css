@@ -1,0 +1,8 @@
+@font-face {
+  font-family: "aperture";
+  src: url("aperture3.2-webfont.woff") format("woff"),
+    url("aperture3.2-webfont.ttf") format("truetype"),
+    url("aperture3.2-webfont.svg#apertureregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}

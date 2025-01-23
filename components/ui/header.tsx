@@ -36,6 +36,14 @@ export default function Header() {
                   Blog
                 </Link>
               </li> */}
+              <li>
+                <Link
+                  href="/developers"
+                  className="flex items-center px-2 py-1 text-gray-200 transition hover:text-indigo-500 lg:px-3"
+                >
+                  Developers
+                </Link>
+              </li>
               {/* <li>
                 <Link
                   href="/help/frequently-asked-questions"

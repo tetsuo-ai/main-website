@@ -5,11 +5,40 @@ import PageIllustration from "@/components/page-illustration";
 // Core team data
 const coreTeam = [
   {
-    name: "Core Team Member 1",
-    role: "Founder & Lead Developer",
-    image: "/images/team/placeholder.jpg",
-    github: "https://github.com/username",
-    twitter: "https://twitter.com/username",
+    name: "7etsuo",
+    role: "Founder",
+    image: "/images/team/7etsuo.jpeg",
+    github: "https://github.com/7etsuo",
+    twitter: "https://twitter.com/7etsuo",
+  },
+  {
+    name: "richinseattle",
+    role: "Core Developer",
+    image: "/images/team/richinseattle.png",
+    github: "https://github.com/richinseattle",
+    twitter: "https://twitter.com/richinseattle",
+  },
+  {
+    name: "bobtheITguy31337",
+    role: "Core Developer",
+    image: "/images/team/bobtheitguy31337.png",
+    github: "https://github.com/bobtheITguy31337",
+    twitter: "https://twitter.com/bobtheITguy31337",
+  },
+  {
+    name: "RickyC0626",
+    role: "Core Developer",
+    image: "/images/team/rickyc0626.jpeg",
+    github: "https://github.com/RickyC0626",
+    twitter: "https://twitter.com/RickyC0626",
+  },
+
+  {
+    name: "possible_wisdom",
+    role: "Developer",
+    image: "/images/team/possible_wisdom.png",
+    github: "https://github.com/possible_wisdom",
+    twitter: "https://twitter.com/possible_wisdom",
   },
 ];
 
@@ -65,7 +94,7 @@ export default function Developers() {
             </div>
 
             {/* Core team section */}
-            <div className="max-w-sm mx-auto grid gap-8 md:grid-cols-2 lg:grid-cols-3 md:max-w-4xl">
+            <div className="max-w-sm mx-auto grid gap-8 place-items-center md:grid-cols-2 lg:grid-cols-3 md:max-w-4xl">
               <h2
                 className="animate-[gradient_6s_linear_infinite] bg-[linear-gradient(to_right,theme(colors.gray.200),theme(colors.indigo.200),theme(colors.gray.50),theme(colors.indigo.300),theme(colors.gray.200))] bg-[length:200%_auto] bg-clip-text pb-4 font-aperture text-3xl font-semibold text-transparent md:text-4xl col-span-full text-center mb-8"
                 data-aos="fade-up"
@@ -76,9 +105,9 @@ export default function Developers() {
               {coreTeam.map((member, index) => (
                 <div
                   key={member.name}
-                  className="relative flex flex-col items-center"
+                  className="relative flex flex-col items-center text-center"
                   data-aos="fade-up"
-                  data-aos-delay={400 + (index * 100)}
+                  data-aos-delay={400 + index * 100}
                 >
                   <div className="mb-4">
                     <Image
@@ -93,7 +122,7 @@ export default function Developers() {
                   <div className="font-medium text-cyan-400/80 mb-2">
                     {member.role}
                   </div>
-                  <div className="flex space-x-4">
+                  <div className="flex justify-center space-x-4">
                     <Link
                       href={member.github}
                       className="text-cyan-400/60 hover:text-cyan-400 transition duration-150 ease-in-out"
@@ -104,7 +133,7 @@ export default function Developers() {
                         viewBox="0 0 24 24"
                         xmlns="http://www.w3.org/2000/svg"
                       >
-                        <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z" />
+                        <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.237 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z" />
                       </svg>
                     </Link>
                     <Link
@@ -123,17 +152,6 @@ export default function Developers() {
                   </div>
                 </div>
               ))}
-            </div>
-
-            {/* Contributors section */}
-            <div className="max-w-3xl mx-auto mt-24">
-              <h2
-                className="animate-[gradient_6s_linear_infinite] bg-[linear-gradient(to_right,theme(colors.gray.200),theme(colors.indigo.200),theme(colors.gray.50),theme(colors.indigo.300),theme(colors.gray.200))] bg-[length:200%_auto] bg-clip-text pb-4 font-aperture text-3xl font-semibold text-transparent md:text-4xl text-center"
-                data-aos="fade-up"
-                data-aos-delay="500"
-              >
-                Contributors
-              </h2>
             </div>
           </div>
         </div>

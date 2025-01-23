@@ -22,7 +22,6 @@ export default function HeroHome() {
                 text-transparent
                 mb-2
               `}
-              data-aos="fade-up"
               style={{
                 backgroundImage:
                   "linear-gradient(90deg, #00f0ff, #ff00c8, #00f0ff)",

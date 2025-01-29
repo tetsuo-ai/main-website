@@ -1,12 +1,15 @@
-import withMDXFactory from "@next/mdx";
+import createMDX from "@next/mdx";
 import type { NextConfig } from "next";
 
-const withMDX = withMDXFactory();
+const withMDX = createMDX({});
 
 const nextConfig: NextConfig = {
-  pageExtensions: ["js", "jsx", "mdx", "ts", "tsx"],
+  pageExtensions: ["mdx", "ts", "tsx"],
   images: {
     domains: [],
+  },
+  experimental: {
+    mdxRs: true,
   },
 };
 

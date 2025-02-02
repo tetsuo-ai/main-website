@@ -2,6 +2,8 @@ import { MetadataRoute } from "next";
 import fs from "fs/promises";
 import path from "path";
 
+export const baseUrl = "https://tetsuo.ai";
+
 async function getBlogSlugs(dir: string) {
   const entries = await fs.readdir(dir, {
     recursive: true,
@@ -21,7 +23,6 @@ async function getBlogSlugs(dir: string) {
 }
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = "https://tetsuo.ai";
   const blogDir = path.join(process.cwd(), "app/blog");
 
   // Get all blog post slugs

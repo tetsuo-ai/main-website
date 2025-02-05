@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "@mdx-js/loader": "^3.1.0",
-    "next-mdx-remote": "^5.0.0",
     "@radix-ui/react-slot": "^1.1.1",
     "@vercel/analytics": "^1.4.1",
     "class-variance-authority": "^0.7.1",
@@ -18,9 +17,11 @@
     "embla-carousel-react": "8.5.2",
     "lucide-react": "^0.474.0",
     "next": "15.1.6",
+    "next-mdx-remote": "^5.0.0",
     "next-view-transitions": "^0.3.4",
     "react": "19.0.0",
     "react-dom": "19.0.0",
+    "remark-gfm": "^4.0.0",
     "shiki": "^2.2.0",
     "tailwind-merge": "^3.0.1"
   },

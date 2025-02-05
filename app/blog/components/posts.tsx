@@ -30,9 +30,6 @@ export function BlogPosts() {
                   {post.metadata.author || "Tetsuo AI Team"}
                 </div>
               </div>
-              <h2 className="text-xl font-medium text-neutral-200 mb-4">
-                {post.metadata.title}
-              </h2>
               <p className="text-neutral-400 leading-relaxed">
                 {post.metadata.summary}
               </p>

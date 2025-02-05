@@ -19,7 +19,7 @@ export default function BlogLayout({
         <main className="container mx-auto px-4 md:px-8">
           <div className="max-w-4xl mx-auto w-full">
             <div className="bg-black/80  p-6 shadow-lg shadow-red-500/10">
-              <div className="space-y-6 font-mono">{children}</div>
+              <div className="space-y-6">{children}</div>
             </div>
           </div>
         </main>

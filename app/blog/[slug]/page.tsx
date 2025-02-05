@@ -12,63 +12,63 @@ export async function generateStaticParams() {
   }));
 }
 
-export function generateMetadata({ params }: { params: { slug: string } }) {
-  let post = getBlogPosts().find((post) => post.slug === params.slug);
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string } | Promise<{ slug: string }>;
+}) {
+  // Await params to ensure they are fully resolved.
+  const { slug } = await Promise.resolve(params);
+
+  const posts = getBlogPosts();
+  const post = posts.find((post) => post.slug === slug);
+
   if (!post) {
     return null;
   }
 
-  let {
-    title,
-    publishedAt: publishedTime,
-    summary: description,
-    image,
-  } = post.metadata;
-  let ogImage = image
+  const { title, publishedAt, summary, image } = post.metadata;
+  const ogImage = image
     ? image
     : `${baseUrl}/og?title=${encodeURIComponent(title)}`;
 
   return {
     title,
-    description,
+    description: summary,
     openGraph: {
       title,
-      description,
+      description: summary,
       type: "article",
-      publishedTime,
+      publishedTime: publishedAt,
       url: `${baseUrl}/blog/${post.slug}`,
-      images: [
-        {
-          url: ogImage,
-        },
-      ],
+      images: [{ url: ogImage }],
     },
     twitter: {
       card: "summary_large_image",
       title,
-      description,
+      description: summary,
       images: [ogImage],
     },
   };
 }
 
-export default function Blog({ params }: { params: { slug: string } }) {
-  let post = getBlogPosts().find((post) => post.slug === params.slug);
+export default async function Blog({
+  params,
+}: {
+  params: { slug: string } | Promise<{ slug: string }>;
+}) {
+  // Await params so that you can safely access `slug`
+  const { slug } = await Promise.resolve(params);
+
+  const posts = getBlogPosts();
+  const post = posts.find((post) => post.slug === slug);
 
   if (!post) {
     notFound();
   }
 
   return (
-    <section>
-      <div className="mb-8">
-        <Link
-          href="/blog"
-          className="inline-flex items-center text-red-500 hover:text-red-400 transition-colors"
-        >
-          <span className="mr-2">◀</span>
-        </Link>
-      </div>
+    <section className="p-12">
       <script
         type="application/ld+json"
         suppressHydrationWarning
@@ -91,10 +91,18 @@ export default function Blog({ params }: { params: { slug: string } }) {
           }),
         }}
       />
-      <h1 className="text-red-500 text-4xl font-bold mb-2">
-        {post.metadata.title}
-      </h1>
-      <div className="flex justify-between items-center mt-2 mb-8 text-sm">
+
+      <div className="my-4 flex items-center gap-4">
+        <Link
+          href="/blog"
+          className="inline-flex items-center text-red-500 hover:text-red-400 transition-colors"
+        >
+          <span className="mr-2">◀</span>
+        </Link>
+
+        <h1 className="text-red-500 text-4xl mb-0">{post.metadata.title}</h1>
+      </div>
+      <div className="flex justify-between items-center mb-4 text-sm">
         <p className="text-gray-200">{formatDate(post.metadata.publishedAt)}</p>
       </div>
       <article className="prose">

@@ -5,7 +5,7 @@ import { baseUrl } from "app/sitemap";
 import { Link } from "next-view-transitions";
 
 export async function generateStaticParams() {
-  let posts = getBlogPosts();
+  let posts = await getBlogPosts();
 
   return posts.map((post) => ({
     slug: post.slug,
@@ -17,10 +17,9 @@ export async function generateMetadata({
 }: {
   params: { slug: string } | Promise<{ slug: string }>;
 }) {
-  // Await params to ensure they are fully resolved.
   const { slug } = await Promise.resolve(params);
 
-  const posts = getBlogPosts();
+  const posts = await getBlogPosts();
   const post = posts.find((post) => post.slug === slug);
 
   if (!post) {
@@ -60,7 +59,7 @@ export default async function Blog({
   // Await params so that you can safely access `slug`
   const { slug } = await Promise.resolve(params);
 
-  const posts = getBlogPosts();
+  const posts = await getBlogPosts();
   const post = posts.find((post) => post.slug === slug);
 
   if (!post) {

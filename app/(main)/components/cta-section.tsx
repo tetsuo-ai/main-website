@@ -16,8 +16,8 @@ const links: CTALink[] = [
     href: "https://raydium.io/swap/?inputMint=sol&outputMint=8i51XNNpGaKaj4G4nDdmQh95v4FKAxw8mhtaRoKd9tE8",
   },
   {
-    text: "Resources",
-    href: "/resources",
+    text: "Blog",
+    href: "/blog",
   },
 ];
 

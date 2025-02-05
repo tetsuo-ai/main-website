@@ -63,7 +63,7 @@ function CustomLink(props: React.AnchorHTMLAttributes<HTMLAnchorElement>) {
   }
 
   if (href.startsWith("#")) {
-    return <a {...props} />;
+    return <a {...props} className="text-red-500 hover:underline" />;
   }
 
   return (

@@ -1,8 +1,8 @@
 import { Link } from "next-view-transitions";
 import { getBlogPosts } from "app/blog/utils";
 
-export function BlogPosts() {
-  let allBlogs = getBlogPosts();
+export async function BlogPosts() {
+  let allBlogs = await getBlogPosts();
 
   return (
     <div className="space-y-8">

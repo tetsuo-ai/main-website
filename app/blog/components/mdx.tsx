@@ -56,7 +56,7 @@ function CustomLink(props: React.AnchorHTMLAttributes<HTMLAnchorElement>) {
 
   if (href.startsWith("/")) {
     return (
-      <Link href={href} {...props} className="text-blue-500 hover:underline">
+      <Link href={href} {...props} className="text-red-500 hover:underline">
         {props.children}
       </Link>
     );
@@ -66,7 +66,14 @@ function CustomLink(props: React.AnchorHTMLAttributes<HTMLAnchorElement>) {
     return <a {...props} />;
   }
 
-  return <a target="_blank" rel="noopener noreferrer" {...props} />;
+  return (
+    <a
+      target="_blank"
+      rel="noopener noreferrer"
+      {...props}
+      className="text-red-500 hover:underline"
+    />
+  );
 }
 
 function RoundedImage(props: React.ComponentPropsWithoutRef<typeof Image>) {

@@ -21,20 +21,20 @@ export default function Main() {
           <ImageSection
             src="/images/main/2.png"
             alt="Vibrant neon-lit futuristic city skyline"
-            className="border-b border-gray-700"
-            imageClassName="animate-reveal"
+            className={`border-b border-gray-700`}
+            imageClassName={`reveal`}
           />
           <TechnicalComponents />
           <ImageSection
             src="/images/main/3.png"
             alt="Futuristic cityscape with towering architecture"
-            imageClassName="animate-reveal"
+            imageClassName={`reveal`}
           />
           <FeatureGrid />
           <ImageSection
             src="/images/main/4.png"
             alt="Expansive sci-fi urban environment under a colorful sky"
-            imageClassName="animate-reveal"
+            imageClassName={`reveal`}
           />
           <CTASection />
           <Footer />

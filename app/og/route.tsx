@@ -1,8 +1,8 @@
 import { ImageResponse } from "next/og";
 
 export function GET(request: Request) {
-  let url = new URL(request.url);
-  let title = url.searchParams.get("title") || "Tetsuo AI";
+  const url = new URL(request.url);
+  const title = url.searchParams.get("title") || "Tetsuo AI";
 
   return new ImageResponse(
     <div tw="flex flex-col w-full h-full items-center justify-center bg-white">

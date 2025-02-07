@@ -7,7 +7,6 @@ import TechnicalComponents from "./components/technical-components";
 import { Hero } from "./components/hero";
 import Intro from "./components/intro";
 import { ImageSection } from "./components/image-section";
-import styles from "./page.module.css";
 import Footer from "./components/footer";
 
 export default function Main() {
@@ -22,20 +21,20 @@ export default function Main() {
           <ImageSection
             src="/images/main/2.png"
             alt="Vibrant neon-lit futuristic city skyline"
-            className={`border-b border-gray-700`}
-            imageClassName={`${styles.reveal}`}
+            className="border-b border-gray-700"
+            imageClassName="animate-reveal"
           />
           <TechnicalComponents />
           <ImageSection
             src="/images/main/3.png"
             alt="Futuristic cityscape with towering architecture"
-            imageClassName={`${styles.reveal}`}
+            imageClassName="animate-reveal"
           />
           <FeatureGrid />
           <ImageSection
             src="/images/main/4.png"
             alt="Expansive sci-fi urban environment under a colorful sky"
-            imageClassName={`${styles.reveal}`}
+            imageClassName="animate-reveal"
           />
           <CTASection />
           <Footer />

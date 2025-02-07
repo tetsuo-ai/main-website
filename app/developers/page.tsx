@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import PageIllustration from "@/components/page-illustration";
+import PageIllustration from "./components/page-illustration";
 
 // Core team data
 const coreTeam = [

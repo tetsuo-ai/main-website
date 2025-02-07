@@ -50,7 +50,7 @@ export function NavBar() {
             <span className="sr-only">Telegram</span>
           </Link>
           <Link
-            href="https://dexscreener.com/solana/2kb3i5ulkhucjuwq3poxhpuggqbwywttk5eg9e5wnlg6"
+            href="https://dexscreener.com/solana/8i51XNNpGaKaj4G4nDdmQh95v4FKAxw8mhtaRoKd9tE8"
             className="text-gray-700 transition-colors hover:text-gray-500"
           >
             <Dexscreener className="h-5 w-5 " />

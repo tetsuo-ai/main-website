@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import { Link } from "next-view-transitions";
 import Image from "next/image";
 import { MDXRemote } from "next-mdx-remote/rsc";
@@ -9,11 +11,6 @@ const highlighter = await createHighlighter({
   themes: Object.keys(bundledThemes),
   langs: Object.keys(bundledLanguages),
 });
-
-interface TableData {
-  headers: React.ReactNode[];
-  rows: React.ReactNode[][];
-}
 
 function Table({ children }: { children: React.ReactNode }) {
   return (

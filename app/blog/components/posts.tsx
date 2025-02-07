@@ -1,4 +1,3 @@
-import { Link } from "next-view-transitions";
 import { getBlogPosts } from "app/blog/utils";
 
 import BlogPostsClient from "./BlogPostsClient";

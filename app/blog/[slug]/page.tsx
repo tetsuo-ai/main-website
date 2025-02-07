@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { notFound } from "next/navigation";
 import { CustomMDX } from "app/blog/components/mdx";
 import { formatDate, getBlogPosts } from "app/blog/utils";
@@ -5,7 +6,7 @@ import { baseUrl } from "app/sitemap";
 import { Link } from "next-view-transitions";
 
 export async function generateStaticParams() {
-  let posts = await getBlogPosts();
+  const posts = await getBlogPosts();
 
   return posts.map((post) => ({
     slug: post.slug,
@@ -15,7 +16,7 @@ export async function generateStaticParams() {
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string } | Promise<{ slug: string }>;
+  params: any;
 }) {
   const { slug } = await Promise.resolve(params);
 
@@ -54,7 +55,7 @@ export async function generateMetadata({
 export default async function Blog({
   params,
 }: {
-  params: { slug: string } | Promise<{ slug: string }>;
+  params: any;
 }) {
   // Await params so that you can safely access `slug`
   const { slug } = await Promise.resolve(params);

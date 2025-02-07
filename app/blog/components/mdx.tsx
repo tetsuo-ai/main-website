@@ -52,7 +52,7 @@ function TableHeader({ children }: { children: React.ReactNode }) {
 }
 
 function CustomLink(props: React.AnchorHTMLAttributes<HTMLAnchorElement>) {
-  let href = props.href || "";
+  const href = props.href || "";
 
   if (href.startsWith("/")) {
     return (
@@ -109,7 +109,7 @@ function slugify(str: string) {
 
 function createHeading(level: number) {
   const Heading = ({ children }: { children: React.ReactNode }) => {
-    let slug = slugify(children?.toString() || "");
+    const slug = slugify(children?.toString() || "");
     const styles =
       {
         1: "text-4xl font-bold mb-6 mt-8 text-gray-200",
@@ -139,7 +139,7 @@ function createHeading(level: number) {
   return Heading;
 }
 
-let components = {
+const components = {
   h1: createHeading(1),
   h2: createHeading(2),
   h3: createHeading(3),

@@ -10,7 +10,9 @@
   },
   "dependencies": {
     "@mdx-js/loader": "^3.1.0",
-    "@radix-ui/react-slot": "^1.1.1",
+    "@mdx-js/react": "^3.1.0",
+    "@next/mdx": "15.1.6",
+    "@radix-ui/react-slot": "^1.1.2",
     "@vercel/analytics": "^1.4.1",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
@@ -21,19 +23,22 @@
     "next-view-transitions": "^0.3.4",
     "react": "19.0.0",
     "react-dom": "19.0.0",
-    "remark-gfm": "^4.0.0",
-    "shiki": "^2.2.0",
+    "shiki": "^2.1.0",
     "tailwind-merge": "^3.0.1"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "^4.0.3",
-    "@types/node": "^22.13.0",
+    "@tailwindcss/postcss": "^4.0.4",
+    "@types/mdx": "^2.0.13",
+    "@types/node": "^22.13.1",
     "@types/react": "19.0.8",
     "@types/react-dom": "19.0.3",
+    "autoprefixer": "^10.4.20",
     "eslint": "^9.19.0",
     "eslint-config-next": "15.1.6",
     "postcss": "^8.5.1",
-    "tailwindcss": "^4.0.3",
+    "postcss-scss": "^4.0.9",
+    "sass": "^1.84.0",
+    "tailwindcss": "^4.0.4",
     "typescript": "^5.7.3"
   }
 }

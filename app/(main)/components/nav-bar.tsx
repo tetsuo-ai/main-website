@@ -18,10 +18,10 @@ export function NavBar() {
             Buy Token
           </Link>
           <Link
-            href="#"
+            href="/blog"
             className="text-base font-medium text-gray-900 transition-colors hover:text-gray-600"
           >
-            Resources
+            Blog
           </Link>
         </div>
 

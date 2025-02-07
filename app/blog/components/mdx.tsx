@@ -1,5 +1,3 @@
-/* eslint-disable */
-
 import { Link } from "next-view-transitions";
 import Image from "next/image";
 import { MDXRemote } from "next-mdx-remote/rsc";
@@ -74,7 +72,8 @@ function CustomLink(props: React.AnchorHTMLAttributes<HTMLAnchorElement>) {
 }
 
 function RoundedImage(props: React.ComponentPropsWithoutRef<typeof Image>) {
-  return <Image className="rounded-lg" {...props} />;
+  const { alt, ...rest } = props;
+  return <Image alt={alt || ""} className="rounded-lg" {...rest} />;
 }
 
 function Code({
@@ -151,18 +150,60 @@ const components = {
   tr: TableRow,
   td: TableCell,
   th: TableHeader,
-  p: (props: any) => <p {...props} className="text-gray-200 mb-4" />,
-  ul: (props: any) => (
-    <ul {...props} className="text-gray-200 list-disc pl-6 mb-4 space-y-2" />
+  p: ({
+    children,
+    ...props
+  }: {
+    children: React.ReactNode;
+  } & React.HTMLAttributes<HTMLParagraphElement>) => (
+    <p {...props} className="text-gray-200 mb-4">
+      {children}
+    </p>
   ),
-  ol: (props: any) => (
-    <ol {...props} className="text-gray-200 list-decimal pl-6 mb-4 space-y-2" />
+  ul: ({
+    children,
+    ...props
+  }: {
+    children: React.ReactNode;
+  } & React.HTMLAttributes<HTMLUListElement>) => (
+    <ul {...props} className="text-gray-200 list-disc pl-6 mb-4 space-y-2">
+      {children}
+    </ul>
   ),
-  li: (props: any) => <li {...props} className="text-gray-200" />,
-  strong: (props: any) => (
-    <strong {...props} className="text-gray-200 font-bold" />
+  ol: ({
+    children,
+    ...props
+  }: {
+    children: React.ReactNode;
+  } & React.HTMLAttributes<HTMLOListElement>) => (
+    <ol {...props} className="text-gray-200 list-decimal pl-6 mb-4 space-y-2">
+      {children}
+    </ol>
   ),
-  em: (props: any) => <em {...props} className="text-gray-200 italic" />,
+  li: ({
+    children,
+    ...props
+  }: { children: React.ReactNode } & React.HTMLAttributes<HTMLLIElement>) => (
+    <li {...props} className="text-gray-200">
+      {children}
+    </li>
+  ),
+  strong: ({
+    children,
+    ...props
+  }: { children: React.ReactNode } & React.HTMLAttributes<HTMLElement>) => (
+    <strong {...props} className="text-gray-200 font-bold">
+      {children}
+    </strong>
+  ),
+  em: ({
+    children,
+    ...props
+  }: { children: React.ReactNode } & React.HTMLAttributes<HTMLElement>) => (
+    <em {...props} className="text-gray-200 italic">
+      {children}
+    </em>
+  ),
 };
 
 export function CustomMDX(

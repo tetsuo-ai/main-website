@@ -8,7 +8,7 @@ export default function BlogLayout({
   children: ReactNode;
 }>) {
   return (
-    <div className="min-h-screen flex flex-col p-0 bg-[#0a0a0a] text-red-500 relative">
+    <div className="min-h-screen flex flex-col p-0 text-red-500 relative">
       <Image
         src={backgroundImage}
         placeholder="blur"

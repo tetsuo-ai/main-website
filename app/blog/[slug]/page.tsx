@@ -1,4 +1,3 @@
-/* eslint-disable */
 import { notFound } from "next/navigation";
 import { CustomMDX } from "app/blog/components/mdx";
 import { formatDate, getBlogPosts } from "app/blog/utils";
@@ -16,7 +15,7 @@ export async function generateStaticParams() {
 export async function generateMetadata({
   params,
 }: {
-  params: any;
+  params: Promise<{ slug: string }>;
 }) {
   const { slug } = await Promise.resolve(params);
 
@@ -55,7 +54,7 @@ export async function generateMetadata({
 export default async function Blog({
   params,
 }: {
-  params: any;
+  params: Promise<{ slug: string }>;
 }) {
   // Await params so that you can safely access `slug`
   const { slug } = await Promise.resolve(params);

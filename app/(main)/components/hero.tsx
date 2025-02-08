@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { NavBar } from "./nav-bar";
+import mainImage from "@/public/images/main/1.png";
 
 interface HeroProps {
   className?: string;
@@ -14,10 +15,11 @@ export function Hero({ className = "", imageClassName = "" }: HeroProps) {
         className={`relative w-full h-full overflow-hidden rounded-b-[80px] ${imageClassName}`}
       >
         <Image
-          src="/images/main/1.png"
+          src={mainImage}
           alt="Futuristic landscape with a tower city"
           fill
           priority
+          placeholder="blur"
           className="object-cover"
           sizes="100vw"
         />
